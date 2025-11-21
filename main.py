@@ -5,12 +5,15 @@ def get_book_text(path_to_file):
     return file_contents
 
 
-from stats import count_words
+from stats import count_characters, count_words
 
 
 def main():
-    wordcount = count_words(get_book_text("books/frankenstein.txt"))
-    print(f"Found {wordcount} total words")
+    words_counted = count_words(get_book_text("books/frankenstein.txt"))
+    print(f"Found {words_counted} total words")
+
+    characters_counted = count_characters(get_book_text("books/frankenstein.txt"))
+    print(characters_counted)
 
 
 main()
