@@ -5,8 +5,14 @@ def count_words(file_contents):
 
 def count_characters(file_contents):
     characount = {}
+
     lowercase_file_contents = file_contents.lower()
 
-    print("hello character count")
+    for character in lowercase_file_contents:
+        if character in characount:
+            characount[character] += 1
+
+        else:
+            characount[character] = 1
 
     return characount
