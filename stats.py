@@ -18,9 +18,11 @@ def sort_chara_dictionary(characount):
     sorted_characount = []
 
     for ch in characount:
-        if ch in sorted_characount:
-            sorted_characount[ch] += 1
-        else:
-            sorted_characount.append({"char": ch, "num": 1})
+        sorted_characount.append({"char": ch, "num": characount[ch]})
+
+    def sort_on(characount):
+        return characount["num"]
+
+    sorted_characount.sort(reverse=True, key=sort_on)
 
     return sorted_characount
