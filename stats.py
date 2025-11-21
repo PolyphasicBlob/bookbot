@@ -15,4 +15,12 @@ def count_characters(file_contents):
 
 
 def sort_chara_dictionary(characount):
-    pass
+    sorted_characount = []
+
+    for ch in characount:
+        if ch in sorted_characount:
+            sorted_characount[ch] += 1
+        else:
+            sorted_characount.append({"char": ch, "num": 1})
+
+    return sorted_characount

@@ -1,11 +1,11 @@
+from stats import count_characters, count_words, sort_chara_dictionary
+
+
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
         file_contents = f.read()
 
     return file_contents
-
-
-from stats import count_characters, count_words
 
 
 def main():
@@ -17,6 +17,10 @@ def main():
     print("--------- Character Count -------")
     characters_counted = count_characters(get_book_text("books/frankenstein.txt"))
     print(characters_counted)
+    final_count = sort_chara_dictionary(
+        count_characters(get_book_text("books/frankenstein.txt"))
+    )
+    print(final_count)
 
 
 main()
